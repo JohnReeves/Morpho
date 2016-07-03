@@ -1,0 +1,178 @@
+<html>
+<head>
+<style type="text/css">
+body {background: black; color:white;}
+
+
+#slides {
+	position: fixed;
+	top: 10%;
+	left: 50%;
+	transform: translate (-50%, -50%);
+	z-index: 3;
+}
+
+#slidesX { position: fixed; z-index: 2; }
+#slidesX > img { position: fixed; }
+#slidesY { position: fixed; z-index: 1; }
+#slidesY > img { position: fixed; }
+</style>
+</style>
+
+<script type="text/javascript" src="jquery-1.12.1.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+		//X: Insert images into slidesX div
+        $("#slidesX").css("width", $("#slidesX").children().first().width());
+        $("#slidesX").css("height", $("#slidesX").children().first().height());
+        $("#slidesX").children().css("opacity", 0.0);
+        $("#slidesX").children().first().css("opacity", 1);
+		
+		//Y: Insert images into slidesY div
+		$("#slidesY").css("width", $("#slidesY").children().first().width());
+        $("#slidesY").css("height", $("#slidesY").children().first().height());
+        $("#slidesY").children().css("opacity", 0.0);
+        $("#slidesY").children().first().css("opacity", 1);
+
+        $("#slides").mousemove(function (e) {
+		//X:
+            nslidesX = $("#slidesX").children().length;
+            fractionX = (e.pageX - $("#slidesX").offset().left) / $("#slidesX").width();
+            fractionX = Math.max(Math.min(fractionX, (1)), 0);
+            slidenumX = fractionX * (nslidesX-1);
+			lowslideX = Math.floor(slidenumX);
+            highslideX = Math.ceil(slidenumX);
+            highslideXopacity = 0.5*(slidenumX - lowslideX);
+            lowslideXopacity = 0.5*(1 - highslideXopacity);
+			angleX = (180/Math.PI)*Math.acos(2*fractionX-1);//Added for angle X
+		
+		
+		//Y:
+		    nslidesY = $("#slidesY").children().length;
+            fractionY = (e.pageY - $("#slidesY").offset().top) / $("#slidesY").width();
+            fractionY = Math.max(Math.min(fractionY, (1)), 0);
+            slidenumY = fractionY * (nslidesY-1);
+            lowslideY = Math.floor(slidenumY);
+            highslideY = Math.ceil(slidenumY);
+            highslideYopacity = 0.5*(slidenumY - lowslideY);
+            lowslideYopacity = 0.5*(1 - highslideYopacity);
+			angleY = (180/Math.PI)*Math.acos(2*fractionY-1);//Added for angle Y
+		 
+			//X:
+            $("#slidesX").children().each(function (i) {
+                if (i == lowslideX) {
+                    this.style.opacity = lowslideXopacity;
+                } else if (i == highslideX) {
+                    this.style.opacity = highslideXopacity;
+                } else {
+                    this.style.opacity = 0;
+                }
+            });
+
+			//Y:
+            $("#slidesY").children().each(function (j) {
+                if (j == lowslideY) {
+                    this.style.opacity = lowslideYopacity;
+                } else if (j == highslideY) {
+                    this.style.opacity = highslideYopacity;
+                } else {
+                    this.style.opacity = 0;
+                }
+            });
+			//Add angle of elevation of light source here
+			$('#elevation').html('Elevation of incident light = 38 degrees');
+			//Add light source details here
+			$('#source').html('Light source type: LED ; Voltage: 5V');
+			//Add other text to appear on web page:
+			//X and Y co-ordinates on axis of length 1 with origin in upper left corner of image
+            $("#debugX").html("fractionX = " + fractionX.toFixed(2));
+			$("#debugY").html("fractionY = " + fractionY.toFixed(2));
+			//Percentage of individual images shown
+            $("#debug2X").html("slideX = " + slidenumX.toFixed(2) + ", " + lowslideX + ", " + highslideX);
+			$("#debug2Y").html("slideY = " + slidenumY.toFixed(2) + ", " + lowslideY + ", " + highslideY);
+			//Corresponding angles of incident light as source is rotated
+			$("#angleX").html("angleX = " + angleX.toFixed(2) + "  " + "degrees");
+			$("#angleY").html("angleY = " + angleY.toFixed(2) + "  " + "degrees");	
+
+        });
+		  $(document).mousemove(function (f) {
+		  $('#status').html('Location =' + f.pageX + ', ' + f.pageY);
+		}); 
+    })
+</script>
+</head>
+<body>
+Iridescence of a Rhetinor blue Morpho wing
+<br></br>
+<div id="slides" style="width: 200px; height: 200px;">
+	<div id="slidesX" >
+		<img src="XRhet1.jpg" style="this.style.opacity;"></img>
+		<img src="XRhet2.jpg" style="this.style.opacity;"></img>
+		<img src="XRhet3.jpg" style="this.style.opacity;"></img>
+		<img src="XRhet4.jpg" style="this.style.opacity;"></img>
+		<img src="XRhet5.jpg" style="this.style.opacity;"></img>
+		<img src="XRhet6.jpg" style="this.style.opacity;"></img>
+		<img src="XRhet7.jpg" style="this.style.opacity;"></img>
+		<img src="XRhet8.jpg" style="this.style.opacity;"></img>
+		<img src="XRhet9.jpg" style="this.style.opacity;"></img>
+		<img src="XRhet10.jpg" style="this.style.opacity;"></img>
+		<img src="XRhet11.jpg" style="this.style.opacity;"></img>
+	</div>
+	<div id="slidesY" >
+		<img src="YRhet1.jpg" style="this.style.opacity;"></img>
+		<img src="YRhet2.jpg" style="this.style.opacity;"></img>
+		<img src="YRhet3.jpg" style="this.style.opacity;"></img>
+		<img src="YRhet4.jpg" style="this.style.opacity;"></img>
+		<img src="YRhet5.jpg" style="this.style.opacity;"></img>
+		<img src="YRhet6.jpg" style="this.style.opacity;"></img>
+		<img src="YRhet7.jpg" style="this.style.opacity;"></img>
+		<img src="YRhet8.jpg" style="this.style.opacity;"></img>
+		<img src="YRhet9.jpg" style="this.style.opacity;"></img>
+		<img src="YRhet10.jpg" style="this.style.opacity;"></img>
+		<img src="YRhet11.jpg" style="this.style.opacity;"></img>
+	</div>
+</div>
+<br></br>
+<div id="elevation">
+Elevation of incident light = 38 degrees
+</div>
+<div id="source">
+Light source type: LED ; Voltage: 5V
+</div>
+<div id="status">
+Location = + e.pageX + ', ' + e.pageY
+</div>
+<br></br>
+<div id="debugX">
+fractionX = + fractionX.toFixed(2)
+<br>
+</div>
+<div id="debugY">
+fractionY = + fractionY.toFixed(2)
+</div>
+<div id="angleX">
+angleX =  + angleX.toFixed(2) + ' ' + "degrees"
+<br>
+</div>
+<div id="angleY">
+angleY =  + angleY.toFixed(2) + ' ' + "degrees"
+</div>
+<br></br>
+<div id="debug2X">
+slideX = "+ slidenumX.toFixed(2) + ", " + lowslideX + ", " + highslideX
+<br>
+</div>
+<div id="debug2Y">
+slideY = "+ slidenumY.toFixed(2) + ", " + lowslideY + ", " + highslideY
+</div>
+
+<p>
+This jquery javascript smoothly crossfades between a series of images as the
+mouse is scrolled over the image.
+</p>
+<p>
+Isobel Romero-Shaw and Jasmine Love 2016
+</p>
+
+</body>
+</html>
