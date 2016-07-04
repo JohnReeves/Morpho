@@ -19,7 +19,7 @@ body {background: black; color:white;}
 </style>
 </style>
 
-<script type="text/javascript" src="jquery-1.12.1.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
 <script type="text/javascript">
     jQuery(document).ready(function () {
 		//X: Insert images into slidesX div
@@ -27,7 +27,7 @@ body {background: black; color:white;}
         $("#slidesX").css("height", $("#slidesX").children().first().height());
         $("#slidesX").children().css("opacity", 0.0);
         $("#slidesX").children().first().css("opacity", 1);
-		
+
 		//Y: Insert images into slidesY div
 		$("#slidesY").css("width", $("#slidesY").children().first().width());
         $("#slidesY").css("height", $("#slidesY").children().first().height());
@@ -45,8 +45,8 @@ body {background: black; color:white;}
             highslideXopacity = 0.5*(slidenumX - lowslideX);
             lowslideXopacity = 0.5*(1 - highslideXopacity);
 			angleX = (180/Math.PI)*Math.acos(2*fractionX-1);//Added for angle X
-		
-		
+
+
 		//Y:
 		    nslidesY = $("#slidesY").children().length;
             fractionY = (e.pageY - $("#slidesY").offset().top) / $("#slidesY").width();
@@ -57,7 +57,7 @@ body {background: black; color:white;}
             highslideYopacity = 0.5*(slidenumY - lowslideY);
             lowslideYopacity = 0.5*(1 - highslideYopacity);
 			angleY = (180/Math.PI)*Math.acos(2*fractionY-1);//Added for angle Y
-		 
+
 			//X:
             $("#slidesX").children().each(function (i) {
                 if (i == lowslideX) {
@@ -92,12 +92,12 @@ body {background: black; color:white;}
 			$("#debug2Y").html("slideY = " + slidenumY.toFixed(2) + ", " + lowslideY + ", " + highslideY);
 			//Corresponding angles of incident light as source is rotated
 			$("#angleX").html("angleX = " + angleX.toFixed(2) + "  " + "degrees");
-			$("#angleY").html("angleY = " + angleY.toFixed(2) + "  " + "degrees");	
+			$("#angleY").html("angleY = " + angleY.toFixed(2) + "  " + "degrees");
 
         });
 		  $(document).mousemove(function (f) {
 		  $('#status').html('Location =' + f.pageX + ', ' + f.pageY);
-		}); 
+		});
     })
 </script>
 </head>
@@ -106,30 +106,30 @@ Iridescence of a Rhetinor blue Morpho wing
 <br></br>
 <div id="slides" style="width: 200px; height: 200px;">
 	<div id="slidesX" >
-		<img src="XRhet1.jpg" style="this.style.opacity;"></img>
-		<img src="XRhet2.jpg" style="this.style.opacity;"></img>
-		<img src="XRhet3.jpg" style="this.style.opacity;"></img>
-		<img src="XRhet4.jpg" style="this.style.opacity;"></img>
-		<img src="XRhet5.jpg" style="this.style.opacity;"></img>
-		<img src="XRhet6.jpg" style="this.style.opacity;"></img>
-		<img src="XRhet7.jpg" style="this.style.opacity;"></img>
-		<img src="XRhet8.jpg" style="this.style.opacity;"></img>
-		<img src="XRhet9.jpg" style="this.style.opacity;"></img>
-		<img src="XRhet10.jpg" style="this.style.opacity;"></img>
-		<img src="XRhet11.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/V2CoAXU.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/D8kozHy.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/cPnx2lI.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/nadjkbv.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/loJY3ly.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/HFyQdYB.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/7KFygHh.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/OCMoPGq.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/MrRE065.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/OM99uMt.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/lUfGD4k.jpg" style="this.style.opacity;"></img>
 	</div>
 	<div id="slidesY" >
-		<img src="YRhet1.jpg" style="this.style.opacity;"></img>
-		<img src="YRhet2.jpg" style="this.style.opacity;"></img>
-		<img src="YRhet3.jpg" style="this.style.opacity;"></img>
-		<img src="YRhet4.jpg" style="this.style.opacity;"></img>
-		<img src="YRhet5.jpg" style="this.style.opacity;"></img>
-		<img src="YRhet6.jpg" style="this.style.opacity;"></img>
-		<img src="YRhet7.jpg" style="this.style.opacity;"></img>
-		<img src="YRhet8.jpg" style="this.style.opacity;"></img>
-		<img src="YRhet9.jpg" style="this.style.opacity;"></img>
-		<img src="YRhet10.jpg" style="this.style.opacity;"></img>
-		<img src="YRhet11.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/Jy1Mfb2.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/2Agts03.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/HAioLGa.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/AufBJjK.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/xJp8FVt.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/6sKzRUS.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/H03NSy4.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/cBGthag.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/nFGm09W.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/emkeBFB.jpg" style="this.style.opacity;"></img>
+		<img src="http://imgur.com/6YVPW1b.jpg" style="this.style.opacity;"></img>
 	</div>
 </div>
 <br></br>
