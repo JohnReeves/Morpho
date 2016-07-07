@@ -29,7 +29,7 @@ body {background: black; color:white;}
         $("#slidesX").children().first().css("opacity", 1);
 
 		//Y: Insert images into slidesY div
-		$("#slidesY").css("width", $("#slidesY").children().first().width());
+	$("#slidesY").css("width", $("#slidesY").children().first().width());
         $("#slidesY").css("height", $("#slidesY").children().first().height());
         $("#slidesY").children().css("opacity", 0.0);
         $("#slidesY").children().first().css("opacity", 1);
@@ -48,7 +48,7 @@ body {background: black; color:white;}
 
 
 		//Y:
-		    nslidesY = $("#slidesY").children().length;
+	    nslidesY = $("#slidesY").children().length;
             fractionY = (e.pageY - $("#slidesY").offset().top) / $("#slidesY").width();
             fractionY = Math.max(Math.min(fractionY, (1)), 0);
             slidenumY = fractionY * (nslidesY-1);
